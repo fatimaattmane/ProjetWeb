@@ -8,21 +8,42 @@
 		<table class="table ">
 			<thead class="thead-dark">
 				<tr>
-					<th>Evenement</th>
-					<th>Informations</th>
-					<th class="col-1">Participants</th>
+					<th>Evènement</th>
+					<th>Date</th>
+					<th>Lieu</th>
+					<th>Participants</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
 			<tr>
-				<td></td>
-				<td></td>
-				<td><button class="btn btn-primary">→</button></td>
+				<td>AL3C</td>
+				<td>19/06/2018</td>
+				<td>Paul Sabatier - U3</td>
+				<td>65/250</td>
+				<td>
+					<button class="btn btn-primary col-3">+</button>
+					<button class="btn btn-success col-3">-></button>
+					<button class="btn btn-danger col-3">-</button>
+				</td>
+			</tr>
+			<tr>
+				<td>CDH</td>
+				<td>15/03/2018</td>
+				<td>Capitole - U3</td>
+				<td>89/250</td>
+				<td>
+					<button class="btn btn-primary col-3">+</button>
+					<button class="btn btn-success col-3">-></button>
+					<button class="btn btn-danger col-3">-</button>
+				</td>
 			</tr>
 			</tbody>
 		</table>
 	</div>
-	<div class="col-1">
-		<a  href ui-sref="evenementsCrea" ui-sref-active="active"><input type="button" class="btn btn-info" value="NEW"></a>
+</div>
+<div class="row justify-content-center">
+	<div>
+		<a  href ui-sref="evenementsCrea" ui-sref-active="active"><input type="button" class="btn btn-info col-12" value="Ajouter un évènement"></a>
 	</div>
 </div>
