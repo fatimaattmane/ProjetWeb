@@ -24,7 +24,6 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/appliCliente'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
-<<<<<<< HEAD
 //Obtention de la liste des évènements
 app.get('/api/evenements', function (req, res) {
 	con.query("SELECT * FROM Evenement", function (err, result, fields) {
@@ -32,7 +31,7 @@ app.get('/api/evenements', function (req, res) {
 		console.log(result);
 		res.json(result);
 	});
-=======
+});
 app.post('/evenement/', function (req, res) {
 	var evenement = req.body;
 	var data = [evenement.acronyme, evenement.nomE, evenement.dateE, evenement.lieu,evenement.description,evenement.dateOuvertureI,evenement.dateFermetureI,evenement.nbMaxParticipants];
@@ -52,7 +51,6 @@ app.post('/evenement/', function (req, res) {
 						return res.send({ status: "Succès", description:result.insertId}); 
 					}
 				});
->>>>>>> 9223a41440bf2f8f5406103cef82d3588345b501
 });
 
 /*
