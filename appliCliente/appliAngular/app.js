@@ -1,10 +1,15 @@
 angular.module('miageIn', ['ui.router', 'ngResource'])
         .config(["$stateProvider", "$urlServiceProvider", function ($stateProvider, $urlServiceProvider) {
                 $stateProvider
+<<<<<<< HEAD
                         .state('reseignement', {
                             url: '/reseignement-utilisateur',
                             templateUrl: 'vues/reseignement.html',
                             //controller: 'reseignementCtrl'
+                        .state('renseignement', {
+                            url: '/renseignement-utilisateur',
+                            templateUrl: 'vues/renseignement.html',
+                            //controller: 'renseignementCtrl'
                         })
                         .state('evenements', {
                             url: '/evenements',
@@ -22,6 +27,7 @@ angular.module('miageIn', ['ui.router', 'ngResource'])
                             //controller: 'evenementsCreaCtrl'
                         })
 						$urlServiceProvider.rules.otherwise({state: 'reseignement'});
+						$urlServiceProvider.rules.otherwise({state: 'renseignement'});
             }]);
 			
 

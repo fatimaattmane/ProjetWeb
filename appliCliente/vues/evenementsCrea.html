@@ -5,38 +5,32 @@
 </div>
 
 <div class="row justify-content-center ">
+<div class="row justify-content-center " ng-controller="evenementsCreaCtrl">
 					<div class="col-sm-12 col-md-6">
 						<form name='creationEventForm' ng-submit="creerEvent()"> 
 							<div class="form-group">
 								<label for="acronyme">Acronyme</label>
-								<input type="text" class="form-control" id="acronyme" placeholder="Saisissez l'acronyme" required tabindex="1" ng-model='Evenement.acronyme'>
 							</div>
 							<div class="form-group">
 								<label for="nom">Nom</label>
-								<input type="text" class="form-control" id="nom" placeholder="Saisissez le nom" required tabindex="1" ng-model='Evenement.nom'>
 							</div>
 							<div class="form-group">
 								<label for="lieu">Lieu</label>
-								<input type="text" class="form-control" id="lieu" placeholder="Saisissez le lieu" required tabindex="1" ng-model='Evenement.lieu'>
 							</div>
 							<div class="form-group">
 								<label for="description">Description</label>
-								<input type="text" class="form-control" id="description" placeholder="Saisissez la description" required tabindex="1" ng-model='Evenement.description'>
 							</div>
 							
 					</div>
 					<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dateOuv">Date d'ouverture</label>
-								<input type="date" class="form-control" id="dateOuv" placeholder="Saisissez la date d'ouverture" required tabindex="1" ng-model='Evenement.dateOuv'>
 							</div>
 							<div class="form-group">
 								<label for="dateClot">Date de cloture</label>
-								<input type="date" class="form-control" id="dateClot" placeholder="Saisissez la date de cloture" required tabindex="1" ng-model='Evenement.dateClot'>
 							</div>
 							<div class="form-group">
 								<label for="nbreMaxP">Capacité maximale</label>
-								<input type="number" class="form-control" id="nbreMaxP" placeholder="Saisissez le nombre maximum de parsonnes" required tabindex="1" ng-model='Evenement.nbreMaxP'>
 							</div>
 							<button type="submit" class="btn btn-success">Créer</button>
 						</form>
