@@ -4,24 +4,25 @@ angular.module('miageIn', ['ui.router', 'ngResource'])
                         .state('reseignement', {
                             url: '/reseignement-utilisateur',
                             templateUrl: 'vues/reseignement.html',
-                            controller: 'reseignementCtrl'
+                            //controller: 'reseignementCtrl'
                         })
                         .state('evenements', {
                             url: '/evenements',
                             templateUrl: 'vues/evenements.html',
-                            controller: 'evenementsCtrl'
+                            controller: 'CtrlEvenement'
                         })
 						.state('statistiques', {
                             url: '/statistiques',
                             templateUrl: 'vues/statistiques.html',
-                            controller: 'statistiquesCtrl'
+                            //controller: 'statistiquesCtrl'
                         })
 						.state('evenementsCrea', {
                             url: '/creation-evenements',
                             templateUrl: 'vues/evenementsCrea.html',
-                            controller: 'evenementsCreaCtrl'
+                            //controller: 'evenementsCreaCtrl'
                         })
 						$urlServiceProvider.rules.otherwise({state: 'reseignement'});
             }]);
+			
 
 

@@ -1,6 +1,7 @@
 /*var banque = require('./librairiesServer/banque');*/
 var bodyParser = require('body-parser');
 var express = require('express');
+var evenement = require('./metier/evenement');
 
 // DataBase 
 var mysql = require("mysql");
@@ -17,13 +18,20 @@ con.connect(function(err){
   }
   console.log('Connection established');
 });
+
 var app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/appliCliente'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
-
-
+//Obtention de la liste des évènements
+app.get('/api/evenements', function (req, res) {
+	con.query("SELECT * FROM Evenement", function (err, result, fields) {
+		if (err) throw err;
+		console.log(result);
+		res.json(result);
+	});
+});
 
 /*
  * Fonctions utilitaires
