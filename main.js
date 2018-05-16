@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/appliCliente'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
+<<<<<<< HEAD
 //Obtention de la liste des évènements
 app.get('/api/evenements', function (req, res) {
 	con.query("SELECT * FROM Evenement", function (err, result, fields) {
