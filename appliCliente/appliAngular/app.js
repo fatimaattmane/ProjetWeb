@@ -27,5 +27,5 @@ var appMI = angular.module('miageIn', ['ui.router', 'ngResource', 'miageIn'])
                             templateUrl: 'vues/evenementsCrea.html',
                             controller: 'evenementsCreaCtrl'
                         })
-						$urlServiceProvider.rules.otherwise({state: 'renseignement'});
+					//	$urlServiceProvider.rules.otherwise({state: 'renseignement'});
             }]);
