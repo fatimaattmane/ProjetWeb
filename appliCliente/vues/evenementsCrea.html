@@ -6,37 +6,41 @@
 
 <div class="row justify-content-center " ng-controller="evenementsCreaCtrl">
 					<div class="col-sm-12 col-md-6">
-						<form name='creationEventForm' ng-submit="creerEvent()"> 
+						<form name='creationEventForm' ng-submit="creerEvent()">
 							<div class="form-group">
 								<label for="acronyme">Acronyme</label>
 								<input type="text" class="form-control" name="acronyme" id="acronyme" placeholder="Saisissez l'acronyme" required tabindex="1" ng-model='Evenement.acronyme'>
 							</div>
 							<div class="form-group">
 								<label for="nom">Nom</label>
-								<input type="text" class="form-control" name="nom" id="nom" placeholder="Saisissez le nom" required tabindex="1" ng-model='Evenement.nom'>
+								<input type="text" class="form-control" name="nom" id="nom" placeholder="Saisissez le nom" required tabindex="2" ng-model='Evenement.nomE'>
 							</div>
+              <div class="form-group">
+                <label for="dateE">Date de l'evenement</label>
+                <input type="date" class="form-control" name="dateE" id="dateE" placeholder="Saisissez la date" required tabindex="3" ng-model='Evenement.dateE'>
+              </div>
 							<div class="form-group">
 								<label for="lieu">Lieu</label>
-								<input type="text" class="form-control" name="lieu" id="lieu" placeholder="Saisissez le lieu" required tabindex="1" ng-model='Evenement.lieu'>
+								<input type="text" class="form-control" name="lieu" id="lieu" placeholder="Saisissez le lieu" required tabindex="4" ng-model='Evenement.lieu'>
 							</div>
 							<div class="form-group">
 								<label for="description">Description</label>
-								<input type="text" class="form-control" name="description" id="description" placeholder="Saisissez la description" required tabindex="1" ng-model='Evenement.description'>
+								<input type="text" class="form-control" name="description" id="description" placeholder="Saisissez la description" required tabindex="5" ng-model='Evenement.description'>
 							</div>
-							
+
 					</div>
 					<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="dateOuv">Date d'ouverture</label>
-								<input type="date" class="form-control" name="dateOuv" id="dateOuv" placeholder="Saisissez la date d'ouverture" required tabindex="1" ng-model='Evenement.dateOuv'>
+								<input type="date" class="form-control" name="dateOuvertureI" id="dateOuvertureI" placeholder="Saisissez la date d'ouverture des inscriptions" required tabindex="6" ng-model='Evenement.dateOuvertureI'>
 							</div>
 							<div class="form-group">
-								<label for="dateClot">Date de cloture</label>
-								<input type="date" class="form-control" name="dateClot" id="dateClot" placeholder="Saisissez la date de cloture" required tabindex="1" ng-model='Evenement.dateClot'>
+								<label for="dateFermetureI">Date de cloture</label>
+								<input type="date" class="form-control" name="dateFermetureI" id="dateFermetureI" placeholder="Saisissez la date de cloture des inscriptions" required tabindex="7" ng-model='Evenement.dateFermetureI'>
 							</div>
 							<div class="form-group">
-								<label for="nbreMaxP">Capacité maximale</label>
-								<input type="number" class="form-control" name="nbreMaxP" id="nbreMaxP" placeholder="Saisissez le nombre maximum de parsonnes" required tabindex="1" ng-model='Evenement.nbreMaxP'>
+								<label for="nbMaxParticipants">Capacité maximale</label>
+								<input type="number" class="form-control" name="nbMaxParticipants" id="nbMaxParticipants" placeholder="Saisissez le nombre maximum de parsonnes" required tabindex="8" ng-model='Evenement.nbMaxParticipants'>
 							</div>
 							<button type="submit" class="btn btn-success">Créer</button>
 						</form>
@@ -50,6 +54,3 @@
 						</div>
 					</div>
 				</div>
-   
-
-
