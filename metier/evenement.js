@@ -15,19 +15,6 @@ var creerEvenement = function(acronyme,nomE,lieu,description,dateOuvertureI,date
 	return 1;
 }
 
-// Constructeur pour les Evenements
-function Evenement(idE, acronyme, nomE, dateE, lieu, description, dateOuvertureI, dateFermetureI, nbMaxParticipants) {
-  this.idE = idE;
-  this.acronyme = acronyme;
-  this.nomE = nomE;
-  this.dateE = dateE;
-  this.lieu = lieu;
-  this.description = description;
-  this.dateOuvertureI = dateOuvertureI;
-  this.dateFermetureI = dateFermetureI;
-  this.nbMaxParticipants = nbMaxParticipants;
-}
-
 // Constructeur pour les Positions
 var getEvenements = async function(con) {
 	return new Promise(function (resolve, reject) {
@@ -56,17 +43,16 @@ var getEvenement = function(con, id) {
 	});
 }
 
-// Fonctions exportées
-exports.getEvenements = getEvenements;
-exports.getEvenement = getEvenement;exports.getEvenement = getEvenement;
-=======
-  function creerBDDEvent(acronyme,nomE,lieu,description,dateOuvertureI,dateFermetureI,nbMaxParticipants, callback){
-    connection.query('INSERT INTO Evenement SET ?', {'acronyme' : acronyme, 'nomE' : nomE, 'dateE' : dateE, 'lieu' : lieu , 'description' : description ,  'dateOuvertureI' : dateOuvertureI ,  'dateFermetureI' : dateFermetureI ,  'nbMaxParticipants' : nbMaxParticipants}, function(err, result) {
-     callback(err,result);
-    });
+
+function creerBDDEvent(acronyme,nomE,lieu,description,dateOuvertureI,dateFermetureI,nbMaxParticipants, callback){
+	connection.query('INSERT INTO Evenement SET ?', {'acronyme' : acronyme, 'nomE' : nomE, 'dateE' : dateE, 'lieu' : lieu , 'description' : description ,  'dateOuvertureI' : dateOuvertureI ,  'dateFermetureI' : dateFermetureI ,  'nbMaxParticipants' : nbMaxParticipants}, function(err, result) {
+		callback(err,result);
+	});
 }
 
-
+// Fonctions exportées
+exports.getEvenements = getEvenements;
+exports.getEvenement = getEvenement;
 exports.creerEvenement = creerEvenement;
-exports.creerEvenement
->>>>>>> eadbac11025967fb68384bd58d65402538fbf6b7
+
+
