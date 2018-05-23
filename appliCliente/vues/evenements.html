@@ -10,33 +10,24 @@
 				<thead class="thead-dark">
 					<tr>
 						<th>Evènement</th>
-						<th>Date</th>
+						<th>Nom</th>
 						<th>Lieu</th>
+						<th>Date</th>
 						<th>Participants</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-				<tr>
-					<td>AL3C</td>
-					<td>19/06/2018</td>
-					<td>Paul Sabatier - U3</td>
-					<td>65/250</td>
+				<tr ng-repeat=" event in events">
+					<td>{{ event.acronyme }}</td>
+					<td>{{ event.nomE }}</td>
+					<td>{{ event.lieu }}</td>
+					<td>{{ event.dateE | date : "dd/MM/yyyy" : "DD/MM/YYYY" }}</td>
+					<td>{{ event.nbMaxParticipants }}</td>
 					<td>
-						<button class="btn btn-light col-3" ng-click="consulter()"><img src="icons/icons8-eye-20.png"/></button>
-						<button class="btn btn-light col-3"><img src="icons/icons8-plus-math-20.png"/></button>
-						<button class="btn btn-light col-3"><img src="icons/icons8-delete-20.png"/></button>
-					</td>
-				</tr>
-				<tr>
-					<td>CDH</td>
-					<td>15/03/2018</td>
-					<td>Capitole - U3</td>
-					<td>89/250</td>
-					<td>
-						<button class="btn btn-light col-3"><img src="icons/icons8-eye-20.png"/></button>
-						<button class="btn btn-light col-3"><img src="icons/icons8-plus-math-20.png"/></button>
-						<button class="btn btn-light col-3"><img src="icons/icons8-delete-20.png"/></button>
+						<button class="btn btn-light col-3" ng-click="" title="S'inscrire"><img src="icons/icons8-eye-20.png"/></button>
+						<button class="btn btn-light col-3" ng-click="consulterEvenement(event.idE)" title="S'inscrire"><img src="icons/icons8-plus-math-20.png"/></button>
+						<button class="btn btn-light col-3" ng-click="supprimer(event.idE)" title="Supprimer"><img src="icons/icons8-delete-20.png"/></button>
 					</td>
 				</tr>
 				</tbody>

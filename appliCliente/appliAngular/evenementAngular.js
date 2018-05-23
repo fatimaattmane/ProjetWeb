@@ -1,14 +1,22 @@
 (function (angular) {
     angular.module('miageIn')
             .controller('CtrlEvenement', ['$scope', '$resource', function ($scope, $resource) {
-				$scope.consulter = function () {
-					console.log("ok");
-					var idCompte = $scope.numCompte;
-					var somme = $scope.somme;
-					var evenement = $resource("/api/evenements");
-					var evenements = evenement.get({id:idCompte});
-					console.log(evenements);
-					//$scope.resultat = "id : " + idCompte + " -> solde : " + somme;
+				$resource("/api/evenements").query().$promise.then(function(result){
+						$scope.events = result;
+					});
+				$scope.consulterEvenement = function (idE) {
+					var evenement = $resource("/api/evenements/:id").query({id:idE}, function(event){
+						console.log(event);
+					});
+				};
+				$scope.supprimer = function (idE) {
+					if (confirm("Confirmez-vous la suppression de l'évènement " + idE + "?")) {
+						var evenement = $resource("/api/evenements/:id");
+						var c1 = evenement.delete({id:idE});
+						$resource("/api/evenements").query().$promise.then(function(result){
+							$scope.events = result;
+						});
+					}
 				};
             }]);
 

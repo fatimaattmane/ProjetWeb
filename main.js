@@ -26,12 +26,27 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 //Obtention de la liste des évènements
 app.get('/api/evenements', function (req, res) {
-	con.query("SELECT * FROM Evenement", function (err, result, fields) {
-		if (err) throw err;
-		console.log(result);
+	evenement.getEvenements(con).then(function (result) {
+        res.json(result);
+    });
+});
+
+//Obtention d'un évènement
+app.get('/api/evenements/:id', function (req, res) {
+	evenement.getEvenement(con, req.params.id).then(function (result) {
 		res.json(result);
 	});
 });
+
+// Suppression d'un évènement
+app.delete('/api/evenements/:id', function (req, res) {
+	var sql = "DELETE FROM Evenement WHERE idE = " + req.params.id;
+	con.query(sql, function (err, result) {
+		if (err) throw err;
+		console.log("Number of records deleted: " + result.affectedRows);
+	});
+});
+
 app.post('/evenement/', function (req, res) {
 	var evenement = req.body;
 	var data = [evenement.acronyme, evenement.nomE, evenement.dateE, evenement.lieu,evenement.description,evenement.dateOuvertureI,evenement.dateFermetureI,evenement.nbMaxParticipants];
@@ -127,5 +142,5 @@ app.post('/api/comptes/:id/ajouts', function (req, res) {
  * Mise en écoute du serveur sur le port 3000
 */
 app.listen(3000, function () {
-    console.log('Banque app listening on port 3000!');
+    console.log('MiageIn app listening on port 3000!');
 }); 
