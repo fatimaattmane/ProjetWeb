@@ -1,30 +1,38 @@
 <div class="row">
     <div class="col">
         <h1 class='text-center text-success'> Vos Renseignements</h1>
+        <h1 class='text-center text-info'> Vos Renseignements</h1>
     </div>
 </div>
 
 <div class="row justify-content-center ">
+<div class="row justify-content-center " ng-controller="renseignementCtrl">
 					<div class="col-sm-12 col-md-6">
 						<form name='creationEventForm' ng-submit="creerUtilisateur()"> 
+						<form name='creationEventForm' ng-submit="creerUser()">
 							<div class="form-group">
 								<label for="nom">Nom</label>
 								<input type="text" class="form-control" id="nom" placeholder="Saisissez votre nom" required tabindex="1" ng-model='Participant.nom'>
+								<input type="text" class="form-control" id="nom" name="nom" placeholder="Saisissez votre nom" required tabindex="1" ng-model='utilisateur.nom'>
 							</div>
 							<div class="form-group">
 								<label for="prenom">Prénom</label>
 								<input type="text" class="form-control" id="prenom" placeholder="Saisissez votre prénom" required tabindex="2" ng-model='Participant.prenom'>
+								<input type="text" class="form-control" id="prenom" name="prenom" placeholder="Saisissez votre prénom" required tabindex="2" ng-model='utilisateur.prenom'>
 							</div>
 							<div class="form-group">
 								<label for="tel">Tel</label>
 								<input type="number" class="form-control" id="tel" placeholder="Saisissez votre numero de téléphone" required tabindex="4" ng-model='Participant.tel'>
+								<input type="number" class="form-control" id="tel" name="numTel" placeholder="Saisissez votre numero de téléphone" required tabindex="4" ng-model='utilisateur.numTel'>
 							</div>
 							
+
 					</div>
 					<div class="col-sm-12 col-md-6">
 							<div class="form-group">
 								<label for="type"  >Type</label>
 								<select name="type" class="form-control" id="type" placeholder="Saisissez votre type" required tabindex="3" ng-model='Participant.type'>
+								<select name="type" class="form-control custom-select id="type" placeholder="Saisissez votre type" required tabindex="3" ng-model='utilisateur.type'>
 									<option value="Etudiant">Etudiant</option>
 									<option value="Prof">Prof</option>
 							  </select>
@@ -32,6 +40,7 @@
 							<div class="form-group">
 								<label for="mail">Adresse Mail</label>
 								<input type="email" class="form-control" id="mail" placeholder="Saisissez votre adresse mail" required tabindex="3" ng-model='Participant.mail'>
+								<input type="email" class="form-control" id="mail" name="mail" placeholder="Saisissez votre adresse mail" required tabindex="3" ng-model='utilisateur.mail'>
 							</div>
 							<button type="submit" class="btn btn-success">Créer</button>
 						</form>
